@@ -1,5 +1,5 @@
-#Done
-######done-app
+# Done
+###### done-app
 Example app where I demonstrate the Redis Bitmaps use case for determining "done" in an asynchronous system.
 
 `Build java app`
