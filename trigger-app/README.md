@@ -1,5 +1,5 @@
-#Trigger
-######trigger-app
+# Trigger
+###### trigger-app
 
 Example app used to trigger activity in both Redis Bitmaps demonstrations.
 
