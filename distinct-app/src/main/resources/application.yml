@@ -1,0 +1,6 @@
+spring.application.name: distinct-app
+
+redis:
+  host:
+  port:
+  password:

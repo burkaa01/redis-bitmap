@@ -1,0 +1,42 @@
+# java
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+
+# gradle
+build/
+.gradle
+.gradletasknamecache
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# sts
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# intellij
+out/
+.idea
+.idea/
+.idea_modules/
+*.iml
+*.ipr
+*.iws
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# system
+.DS_Store

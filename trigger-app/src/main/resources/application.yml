@@ -1,0 +1,14 @@
+spring.application.name: trigger-app
+
+redis:
+  host:
+  port:
+  password:
+
+distinct:
+  host:
+  port:
+
+done:
+  host:
+  port:

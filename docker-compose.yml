@@ -1,0 +1,63 @@
+---
+version: '3.7'
+
+services:
+
+  redis:
+    image: redis:6.2-alpine
+    container_name: redis
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass chSaEVRBrmJc4Zyc2z92
+    volumes:
+      - redis:/data
+    restart: always
+
+  distinct-app:
+    image: burkaa01/redis-bitmap:distinct-app
+    container_name: distinct-app
+    depends_on:
+      - redis
+    environment:
+      - redis.host=redis
+      - redis.port=6379
+      - redis.password=chSaEVRBrmJc4Zyc2z92
+    ports:
+      - "8096:8080"
+    restart: always
+
+  done-app:
+    image: burkaa01/redis-bitmap:done-app
+    container_name: done-app
+    depends_on:
+      - redis
+    environment:
+      - redis.host=redis
+      - redis.port=6379
+      - redis.password=chSaEVRBrmJc4Zyc2z92
+    ports:
+      - "8097:8080"
+    restart: always
+
+  trigger-app:
+    image: burkaa01/redis-bitmap:trigger-app
+    container_name: trigger-app
+    depends_on:
+      - redis
+      - distinct-app
+      - done-app
+    environment:
+      - redis.host=redis
+      - redis.port=6379
+      - redis.password=chSaEVRBrmJc4Zyc2z92
+      - distinct.host=distinct-app
+      - distinct.port=8080
+      - done.host=done-app
+      - done.port=8080
+    ports:
+      - "8098:8080"
+    restart: always
+
+volumes:
+  redis:
+    driver: local
