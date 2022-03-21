@@ -1,5 +1,5 @@
-#Redis Bitmaps
-######redis-bitmap
+# Redis Bitmaps
+###### redis-bitmap
 Example project where I demonstrate two great use cases for Redis Bitmaps: determining "done" in an asynchronous system and collecting distinct activity metrics.
 
 `Local docker images`
