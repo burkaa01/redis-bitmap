@@ -1,5 +1,5 @@
-#Distinct
-######distinct-app
+# Distinct
+###### distinct-app
 Example app where I demonstrate the Redis Bitmaps use case for collecting distinct activity metrics.
 
 `Build app`
